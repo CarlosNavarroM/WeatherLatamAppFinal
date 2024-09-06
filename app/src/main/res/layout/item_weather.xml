@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Información del país -->
+    <TextView
+        android:id="@+id/country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Country"
+        android:textColor="#8D6E63"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Nombre de la ciudad -->
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country_name"
+        app:layout_constraintEnd_toStartOf="@+id/weather_icon"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+    <!-- Descripción del clima -->
+    <TextView
+        android:id="@+id/weather_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weather Description"
+        android:textColor="#8D6E63"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_name"/>
+
+    <!-- Contenedor para imagen e información de temperatura al final -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Temperatura -->
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18°C"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Icono del clima -->
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/cloud" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
